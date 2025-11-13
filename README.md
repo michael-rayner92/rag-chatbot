@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 RAG Chatbot
 
-## Getting Started
+> A Next.js-based Retrieval-Augmented Generation (RAG) chatbot application with document upload, semantic search, and conversational AI.
 
-First, run the development server:
+## 📝 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project is a full-stack AI chatbot that allows users to upload documents, which are then chunked, embedded, and indexed for semantic search. The chatbot uses these indexed documents to provide contextually relevant answers to user queries, leveraging modern LLMs and vector search techniques.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**✨ Key Features:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 📄 Upload and process documents (PDF, text, etc.)
+- 🧩 Semantic chunking and embedding of content
+- ⚡ Fast vector search for relevant context
+- 💬 Conversational chat UI with citations and sources
+- 🛠️ Built with Next.js, React, Drizzle ORM, and OpenAI/AI SDKs
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Requirements
 
-## Learn More
+- 🟢 Node.js v18 or newer
+- 📦 npm, yarn, pnpm, or bun (for running scripts)
+- 🗄️ PostgreSQL database (local or cloud, e.g., Neon)
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Install dependencies:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Configure environment:**
 
-## Deploy on Vercel
+   - Copy `.env.example` to `.env` and fill in required values (database URL, OpenAI API key, etc.)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Run database migrations:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    ```bash
+      #(adjust for your migration tool if needed)
+      npm run drizzle:migrate
+    ```
+
+4. **Start the development server:**
+
+    ```bash
+      npm run dev
+    ```
+
+5. **Open the app:**
+
+      Visit [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🛠️ Tech Stack
+
+- **Framework:** ⚛️ Next.js (App Router)
+- **UI:** 🎨 React, Radix UI, Tailwind CSS
+- **Database:** 🗄️ PostgreSQL, Drizzle ORM
+- **AI/Embeddings:** 🤖 OpenAI, AI SDK, LangChain
+- **PDF/Text Parsing:** 📄 pdf-parse
+
+## 📁 Folder Structure
+
+- `src/app/` — Main app routes and pages
+- `src/components/` — UI and AI chat components
+- `src/types/` — TypeScript types
+- `migrations/` — Database migration scripts
+
+## 📄 License
+
+MIT
